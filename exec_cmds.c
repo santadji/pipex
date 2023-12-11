@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   exec_cmds.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: santadji <santadji@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 15:20:52 by santadji          #+#    #+#             */
-/*   Updated: 2023/12/05 20:39:33 by santadji         ###   ########.fr       */
+/*   Created: 2023/12/04 15:27:02 by santadji          #+#    #+#             */
+/*   Updated: 2023/12/04 15:28:50 by santadji         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
-# include <fcntl.h>
-# include <stdio.h>
-# include <unistd.h>
-# include <sys/wait.h>
+#include "pipex.h"
 
-typedef struct	s_pipex
+int	exec_cmds()
 {
-	int	fd_in;
-	int	ft_out;
-	char	**paths;
-	char	**cmds;
-	int		cmd_counter;
-} t_pipex;
-
-#endif
+	pipe();
+	fork();
+	if (child)
+	{
+		dup2();
+		execve();
+	}
+	else
+		close();
+	return (0);
+}

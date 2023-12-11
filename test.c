@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: santadji <santadji@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 15:20:52 by santadji          #+#    #+#             */
-/*   Updated: 2023/12/05 20:39:33 by santadji         ###   ########.fr       */
+/*   Created: 2023/11/29 15:54:36 by santadji          #+#    #+#             */
+/*   Updated: 2023/12/04 15:06:40 by santadji         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
-# include <fcntl.h>
-# include <stdio.h>
-# include <unistd.h>
-# include <sys/wait.h>
-
-typedef struct	s_pipex
+#include "pipex.h"
+#include <stdio.h>
+#include <unistd.h>
+ 
+int main()
 {
-	int	fd_in;
-	int	ft_out;
-	char	**paths;
-	char	**cmds;
-	int		cmd_counter;
-} t_pipex;
-
-#endif
+	if (unlink("example.txt") == 0)
+		printf("File successfully deleted");
+	else
+		printf("Error deleting file");
+ 
+	return (0);
+}
