@@ -6,13 +6,13 @@
 /*   By: santadji <santadji@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 19:17:19 by santadji          #+#    #+#             */
-/*   Updated: 2023/12/11 19:39:57 by santadji         ###   ########.fr       */
+/*   Updated: 2024/01/12 11:25:03 by santadji         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-char	*get_path_line(char **env)
+char	*get_path_env(char **env)
 {
 	char	**env_line;
 	char	*path_line;
@@ -26,11 +26,11 @@ char	*get_path_line(char **env)
 	return (path_line);
 }
 
-char **get_all_the_paths(t_pipex *pipex, char **env)
+char **get_all_the_paths(t_pipex *pipex, char **envp)
 {
 	char	*path_line;
 	
-	path_line = get_path_line(env);
+	path_line = get_path_env(envp);
 	if (!path_line)
 		return (NULL);
 	pipex->paths = ft_split(path_line, ':');
